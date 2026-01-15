@@ -5,107 +5,107 @@ import { FaDownload, FaArrowLeft, FaPlay, FaImage } from 'react-icons/fa';
 import { projects } from '../data/projects';
 
 const ProjectDetail = () => {
-    const { id } = useParams();
-    const project = projects.find(p => p.id === id);
+  const { id } = useParams();
+  const project = projects.find(p => p.id === id);
 
-    if (!project) {
-        return (
-            <div className="container" style={{ padding: '4rem 0', textAlign: 'center' }}>
-                <h1>Project Not Found</h1>
-                <Link to="/" className="btn">Back to Home</Link>
-            </div>
-        );
-    }
-
+  if (!project) {
     return (
-        <div className="project-detail">
-            <div className="project-header">
-                <div className="container">
-                    <Link to="/" className="back-link"><FaArrowLeft /> Back to Projects</Link>
-                    <h1 className="project-title">{project.title}</h1>
-                    <div className="project-meta">
-                        <span className="date">{project.date}</span>
-                        <div className="tags">
-                            {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
-                        </div>
-                    </div>
-                </div>
+      <div className="container" style={{ padding: '4rem 0', textAlign: 'center' }}>
+        <h1>Project Not Found</h1>
+        <Link to="/" className="btn">Back to Home</Link>
+      </div>
+    );
+  }
+
+  return (
+    <div className="project-detail">
+      <div className="project-header">
+        <div className="container">
+          <Link to="/" className="back-link"><FaArrowLeft /> Back to Projects</Link>
+          <h1 className="project-title">{project.title}</h1>
+          <div className="project-meta">
+            <span className="date">{project.date}</span>
+            <div className="tags">
+              {project.tags.map(tag => <span key={tag} className="tag">{tag}</span>)}
             </div>
+          </div>
+        </div>
+      </div>
 
-            <div className="container project-content">
-                <div className="content-grid">
-                    <div className="main-column">
-                        <section className="section">
-                            <h2>Overview</h2>
-                            <p className="overview-text">{project.overview}</p>
-                        </section>
+      <div className="container project-content">
+        <div className="content-grid">
+          <div className="main-column">
+            <section className="section">
+              <h2>Overview</h2>
+              <p className="overview-text">{project.overview}</p>
+            </section>
 
-                        {project.steps.length > 0 && (
-                            <section className="section">
-                                <h2>Build Procedures</h2>
-                                <div className="steps-list">
-                                    {project.steps.map((step, index) => (
-                                        <div key={index} className="step-item">
-                                            <div className="step-number">{index + 1}</div>
-                                            <div className="step-content">
-                                                <h3>{step.title}</h3>
-                                                <p>{step.description}</p>
-                                                {step.image && (
-                                                    <img src={step.image} alt={step.title} className="step-image" />
-                                                )}
-                                            </div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
+            {project.steps.length > 0 && (
+              <section className="section">
+                <h2>Build Procedures</h2>
+                <div className="steps-list">
+                  {project.steps.map((step, index) => (
+                    <div key={index} className="step-item">
+                      <div className="step-number">{index + 1}</div>
+                      <div className="step-content">
+                        <h3>{step.title}</h3>
+                        <p style={{ whiteSpace: 'pre-line' }}>{step.description}</p>
+                        {step.image && (
+                          <img src={step.image} alt={step.title} className="step-image" />
                         )}
-
-                        {project.gallery.length > 0 && (
-                            <section className="section">
-                                <h2>Gallery</h2>
-                                <div className="gallery-grid">
-                                    {project.gallery.map((item, index) => (
-                                        <div key={index} className="gallery-item">
-                                            {item.type === 'video' ? (
-                                                <div className="video-placeholder">
-                                                    <FaPlay className="play-icon" />
-                                                    <span>{item.caption}</span>
-                                                </div>
-                                            ) : (
-                                                <img src={item.url} alt={item.caption} />
-                                            )}
-                                            <div className="caption">{item.caption}</div>
-                                        </div>
-                                    ))}
-                                </div>
-                            </section>
-                        )}
+                      </div>
                     </div>
-
-                    <div className="sidebar">
-                        <div className="sidebar-card">
-                            <h3>Downloads</h3>
-                            {project.downloads.length > 0 ? (
-                                <div className="downloads-list">
-                                    {project.downloads.map((file, index) => (
-                                        <a key={index} href={file.url} className="download-item">
-                                            <div className="file-info">
-                                                <span className="file-name">{file.name}</span>
-                                                <span className="file-size">{file.size}</span>
-                                            </div>
-                                            <FaDownload />
-                                        </a>
-                                    ))}
-                                </div>
-                            ) : (
-                                <p className="text-muted">No files available.</p>
-                            )}
-                        </div>
-                    </div>
+                  ))}
                 </div>
-            </div>
+              </section>
+            )}
 
-            <style>{`
+            {project.gallery.length > 0 && (
+              <section className="section">
+                <h2>Gallery</h2>
+                <div className="gallery-grid">
+                  {project.gallery.map((item, index) => (
+                    <div key={index} className="gallery-item">
+                      {item.type === 'video' ? (
+                        <div className="video-placeholder">
+                          <FaPlay className="play-icon" />
+                          <span>{item.caption}</span>
+                        </div>
+                      ) : (
+                        <img src={item.url} alt={item.caption} />
+                      )}
+                      <div className="caption">{item.caption}</div>
+                    </div>
+                  ))}
+                </div>
+              </section>
+            )}
+          </div>
+
+          <div className="sidebar">
+            <div className="sidebar-card">
+              <h3>Downloads</h3>
+              {project.downloads.length > 0 ? (
+                <div className="downloads-list">
+                  {project.downloads.map((file, index) => (
+                    <a key={index} href={file.url} className="download-item">
+                      <div className="file-info">
+                        <span className="file-name">{file.name}</span>
+                        <span className="file-size">{file.size}</span>
+                      </div>
+                      <FaDownload />
+                    </a>
+                  ))}
+                </div>
+              ) : (
+                <p className="text-muted">No files available.</p>
+              )}
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <style>{`
         .project-header {
           background: var(--color-bg-secondary);
           padding: var(--spacing-lg) 0 var(--spacing-md);
@@ -300,8 +300,8 @@ const ProjectDetail = () => {
           font-style: italic;
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default ProjectDetail;
