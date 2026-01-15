@@ -1,10 +1,15 @@
+import MazeSolverThumbnail from '../assets/projects/maze-solver/thumbnail.jpg';
+import CompanionBotThumbnail from '../assets/projects/companion-bot/thumbnail.jpg';
+import SelfBalancingRobotThumbnail from '../assets/projects/self-balancing-robot/thumbnail.jpg';
+
+
 export const projects = [
     {
         id: 'maze-solver-bot',
         title: 'Maze Solver Wall-Follower Bot',
         description: 'ESP32-based robot with diagonal sensor geometry and predictive PID control for maze solving. Features smart recovery and gap detection.',
         tags: ['C++', 'ESP32', 'Robotics', 'PID', 'Algorithms'],
-        thumbnail: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: MazeSolverThumbnail,
         date: '2024-02-10',
         overview: 'An advanced maze-solving robot that anticipates walls using diagonal sonars. It implements predictive PID control for smooth navigation and trigonometry-based gap detection.',
         wiring: [
@@ -51,7 +56,7 @@ export const projects = [
         title: 'ESP32 Self-Balancing Robot',
         description: 'Autonomous inverted pendulum robot with real-time web dashboard and PID tuning. Powered by MPU6050 DMP.',
         tags: ['C++', 'ESP32', 'MPU6050', 'PID', 'Control Theory'],
-        thumbnail: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: SelfBalancingRobotThumbnail,
         date: '2024-03-01',
         overview: 'A two-wheeled self-balancing robot that uses an MPU6050 IMU and PID control loop to stay upright. Features a web interface for real-time parameter tuning.',
         wiring: [
@@ -95,7 +100,7 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/self-balancing/side-view.jpg', caption: 'Side View' },
+            { type: 'image', url: '/assets/projects/self-balancing/sideview.jpg', caption: 'Side View' },
             { type: 'image', url: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' },
             { type: 'image', url: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' }
         ],
@@ -108,7 +113,7 @@ export const projects = [
         title: 'Companion Bot v3',
         description: 'Interactive desk companion with OLED face, servo expressions, and AI chat capabilities via Groq API.',
         tags: ['C++', 'ESP32-S3', 'AI', 'IoT', 'OLED'],
-        thumbnail: 'https://images.unsplash.com/photo-1535378437327-b7128d8e1d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: CompanionBotThumbnail,
         date: '2024-03-20',
         overview: 'A smart desktop companion that interacts with you using animated expressions and AI. It can check crypto prices, weather, and chat using LLMs.',
         wiring: [
@@ -152,7 +157,7 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/companion-bot/front-face.jpg', caption: 'Cute Face' },
+            { type: 'image', url: '/assets/projects/companion-bot/cuteface.jpg', caption: 'Cute Face' },
             { type: 'image', url: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' },
             { type: 'image', url: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' }
         ],
