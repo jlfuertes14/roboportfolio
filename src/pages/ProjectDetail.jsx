@@ -40,6 +40,28 @@ const ProjectDetail = () => {
               <p className="overview-text">{project.overview}</p>
             </section>
 
+            {project.wiring && project.wiring.length > 0 && (
+              <section className="section">
+                <h2>Wiring Diagram</h2>
+                <table className="wiring-table">
+                  <thead>
+                    <tr>
+                      <th>Component</th>
+                      <th>Pin Connection</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    {project.wiring.map((item, index) => (
+                      <tr key={index}>
+                        <td>{item.component}</td>
+                        <td><code>{item.pin}</code></td>
+                      </tr>
+                    ))}
+                  </tbody>
+                </table>
+              </section>
+            )}
+
             {project.steps.length > 0 && (
               <section className="section">
                 <h2>Build Procedures</h2>
@@ -298,6 +320,48 @@ const ProjectDetail = () => {
         .text-muted {
           color: var(--color-text-secondary);
           font-style: italic;
+        }
+
+        .wiring-table {
+          width: 100%;
+          border-collapse: collapse;
+          background: var(--color-bg-card);
+          border-radius: 8px;
+          overflow: hidden;
+          border: 1px solid var(--color-border);
+        }
+
+        .wiring-table th,
+        .wiring-table td {
+          padding: 1rem;
+          text-align: left;
+          border-bottom: 1px solid var(--color-border);
+        }
+
+        .wiring-table th {
+          background: var(--color-accent);
+          color: var(--color-bg-primary);
+          font-weight: 600;
+          text-transform: uppercase;
+          font-size: 0.85rem;
+          letter-spacing: 0.5px;
+        }
+
+        .wiring-table tr:last-child td {
+          border-bottom: none;
+        }
+
+        .wiring-table tr:hover {
+          background: rgba(255, 255, 255, 0.03);
+        }
+
+        .wiring-table code {
+          background: rgba(0, 243, 255, 0.1);
+          color: var(--color-accent);
+          padding: 0.25rem 0.5rem;
+          border-radius: 4px;
+          font-family: var(--font-family-mono);
+          font-size: 0.9rem;
         }
       `}</style>
     </div>

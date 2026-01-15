@@ -7,33 +7,24 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1531746790731-6c087fecd65a?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-02-10',
         overview: 'An advanced maze-solving robot that anticipates walls using diagonal sonars. It implements predictive PID control for smooth navigation and trigonometry-based gap detection.',
+        wiring: [
+            { component: 'Front Sonar (HC-SR04)', pin: 'Trig → GPIO 14, Echo → GPIO 35' },
+            { component: 'Left Sonar (NW)', pin: 'Trig → GPIO 18, Echo → GPIO 13' },
+            { component: 'Right Sonar (NE)', pin: 'Trig → GPIO 16, Echo → GPIO 34' },
+            { component: 'Left Motor (L298N)', pin: 'IN1 → GPIO 23, IN2 → GPIO 22, PWM → GPIO 25' },
+            { component: 'Right Motor (L298N)', pin: 'IN3 → GPIO 21, IN4 → GPIO 19, PWM → GPIO 26' },
+            { component: 'Start Button', pin: 'BOOT Button (GPIO 0)' }
+        ],
         steps: [
             {
                 title: 'Hardware Assembly',
                 description: 'Assemble the chassis with two DC motors and mount the ESP32 development board. Attach the L298N motor driver and connect power distribution.',
-                image: '/assets/projects/maze-solver/assembly.jpg' // PLACEHOLDER - Replace with your image
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**Ultrasonic Sensors (HC-SR04):**
-• Front Sonar: Trig → GPIO 14, Echo → GPIO 35
-• Left Sonar (NW): Trig → GPIO 18, Echo → GPIO 13
-• Right Sonar (NE): Trig → GPIO 16, Echo → GPIO 34
-
-**Motors (L298N Driver):**
-• Left Motor: IN1 → GPIO 23, IN2 → GPIO 22, PWM → GPIO 25
-• Right Motor: IN3 → GPIO 21, IN4 → GPIO 19, PWM → GPIO 26
-
-**Control:**
-• Start Button: BOOT Button (GPIO 0)
-                `,
-                image: '/assets/projects/maze-solver/wiring.jpg' // PLACEHOLDER - Replace with your wiring diagram
+                image: '/assets/projects/maze-solver/assembly.jpg'
             },
             {
                 title: 'Sensor Mounting',
                 description: 'Mount three HC-SR04 ultrasonic sensors at diagonal angles: North-West (45°), North (0°), and North-East (45°). This geometry enables predictive wall detection.',
-                image: '/assets/projects/maze-solver/sensors.jpg' // PLACEHOLDER
+                image: '/assets/projects/maze-solver/sensors.jpg'
             },
             {
                 title: 'PID Tuning',
@@ -47,9 +38,9 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' },
+            { type: 'image', url: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' },
+            { type: 'image', url: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/maze_solver_wall-follower_bot', size: 'GitHub' }
@@ -63,34 +54,24 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1485827404703-89b55fcc595e?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-03-01',
         overview: 'A two-wheeled self-balancing robot that uses an MPU6050 IMU and PID control loop to stay upright. Features a web interface for real-time parameter tuning.',
+        wiring: [
+            { component: 'MPU6050 SDA', pin: 'GPIO 32' },
+            { component: 'MPU6050 SCL', pin: 'GPIO 33' },
+            { component: 'MPU6050 INT', pin: 'GPIO 27' },
+            { component: 'Motor A (L298N)', pin: 'ENA → GPIO 25, IN1 → GPIO 23, IN2 → GPIO 22' },
+            { component: 'Motor B (L298N)', pin: 'ENB → GPIO 26, IN3 → GPIO 21, IN4 → GPIO 19' },
+            { component: 'Power', pin: '12V LiPo → Motors, 5V Regulator → ESP32' }
+        ],
         steps: [
             {
                 title: 'Chassis Construction',
                 description: 'Build or 3D print a tall, narrow chassis. Mount two high-torque DC motors with encoders at the base.',
-                image: '/assets/projects/self-balancing/chassis.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**MPU6050 IMU (I2C):**
-• SDA → GPIO 32
-• SCL → GPIO 33
-• INT → GPIO 27
-
-**Motors (L298N Driver):**
-• Motor A: ENA → GPIO 25, IN1 → GPIO 23, IN2 → GPIO 22
-• Motor B: ENB → GPIO 26, IN3 → GPIO 21, IN4 → GPIO 19
-
-**Power:**
-• 12V LiPo battery for motors
-• 5V regulator for ESP32 and MPU6050
-                `,
-                image: '/assets/projects/self-balancing/wiring.jpg' // PLACEHOLDER
+                image: '/assets/projects/self-balancing/chassis.jpg'
             },
             {
                 title: 'MPU6050 Mounting',
                 description: 'Mount the MPU6050 IMU at the center of gravity. Ensure it is level and securely attached to minimize vibration noise.',
-                image: '/assets/projects/self-balancing/mpu6050.jpg' // PLACEHOLDER
+                image: '/assets/projects/self-balancing/mpu6050.jpg'
             },
             {
                 title: 'IMU Calibration',
@@ -110,13 +91,13 @@ export const projects = [
             {
                 title: 'Web Dashboard',
                 description: 'Deploy the built-in web server on ESP32. Access the dashboard via WiFi to monitor pitch angle and adjust PID parameters in real-time.',
-                image: '/assets/projects/self-balancing/dashboard.jpg' // PLACEHOLDER
+                image: '/assets/projects/self-balancing/dashboard.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/self-balancing/side-view.jpg', caption: 'Side View' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/self-balancing/side-view.jpg', caption: 'Side View' },
+            { type: 'image', url: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' },
+            { type: 'image', url: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/self_balancing_robot', size: 'GitHub' }
@@ -130,28 +111,19 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1535378437327-b7128d8e1d17?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-03-20',
         overview: 'A smart desktop companion that interacts with you using animated expressions and AI. It can check crypto prices, weather, and chat using LLMs.',
+        wiring: [
+            { component: 'OLED SDA (I2C)', pin: 'GPIO 8' },
+            { component: 'OLED SCL (I2C)', pin: 'GPIO 9' },
+            { component: 'Nod Servo', pin: 'GPIO 4' },
+            { component: 'Shake Servo', pin: 'GPIO 5' },
+            { component: 'Piezo Buzzer', pin: 'GPIO 6' },
+            { component: 'Capacitive Touch', pin: 'GPIO 2' }
+        ],
         steps: [
             {
                 title: 'Hardware Preparation',
                 description: 'Gather components: ESP32-S3 board, SH1106 128x64 OLED display, 2x SG90 micro servos, passive buzzer, and capacitive touch sensor.',
-                image: '/assets/projects/companion-bot/components.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**Display (I2C):**
-• SDA → GPIO 8
-• SCL → GPIO 9
-
-**Servos:**
-• Nod Servo → GPIO 4
-• Shake Servo → GPIO 5
-
-**Audio & Input:**
-• Piezo Buzzer → GPIO 6
-• Capacitive Touch → GPIO 2
-                `,
-                image: '/assets/projects/companion-bot/wiring.jpg' // PLACEHOLDER
+                image: '/assets/projects/companion-bot/components.jpg'
             },
             {
                 title: 'Display Wiring',
@@ -161,7 +133,7 @@ export const projects = [
             {
                 title: 'Servo Assembly',
                 description: 'Mount servos for head movements: one for nodding (up/down), one for shaking (left/right). Connect to PWM-capable GPIO pins.',
-                image: '/assets/projects/companion-bot/servos.jpg' // PLACEHOLDER
+                image: '/assets/projects/companion-bot/servos.jpg'
             },
             {
                 title: 'RoboEyes Library',
@@ -170,24 +142,19 @@ export const projects = [
             },
             {
                 title: 'Groq API Integration',
-                description: 'Sign up for Groq API and obtain an API key. Add WiFi credentials and API key to the config. Implement HTTP POST requests for chat completions.',
+                description: 'Sign up for Groq API and obtain an API key. Add WiFi credentials and API key to the config. Implement HTTP POST requests for chat.',
                 image: null
             },
             {
                 title: 'Web Dashboard',
                 description: 'Access the companion bot\'s web interface to switch modes (Face, Clock, Pomodoro, Bitcoin, Weather) and send chat messages.',
-                image: '/assets/projects/companion-bot/web-dashboard.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Sound Effects',
-                description: 'Connect the passive buzzer and implement cute sound effects for different moods and interactions (happy, curious, sleepy).',
-                image: null
+                image: '/assets/projects/companion-bot/web-dashboard.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/companion-bot/front-face.jpg', caption: 'Cute Face' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/companion-bot/front-face.jpg', caption: 'Cute Face' },
+            { type: 'image', url: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' },
+            { type: 'image', url: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/companion_bot', size: 'GitHub' }
@@ -201,6 +168,7 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-02-15',
         overview: 'A web application built with React and Vite to visualize the internal state and sensor data of the maze-solving robot in real-time.',
+        wiring: [], // No hardware wiring for web project
         steps: [
             {
                 title: 'Project Setup',
@@ -220,17 +188,17 @@ export const projects = [
             {
                 title: 'Running the Visualizer',
                 description: 'Start the development server with `npm run dev`. Open the browser to see real-time sensor readings, PID outputs, and path data.',
-                image: '/assets/projects/bot-visualizer/dashboard.jpg' // PLACEHOLDER
+                image: '/assets/projects/bot-visualizer/dashboard.jpg'
             },
             {
                 title: 'Understanding the UI',
                 description: 'The dashboard shows: sensor distances (left/center/right), motor speeds, PID error graph, and a 2D representation of the bot\'s path.',
-                image: '/assets/projects/bot-visualizer/ui-breakdown.jpg' // PLACEHOLDER
+                image: '/assets/projects/bot-visualizer/ui-breakdown.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-1.jpg', caption: 'Dashboard Overview' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-2.jpg', caption: 'Path Visualization' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-1.jpg', caption: 'Dashboard Overview' },
+            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-2.jpg', caption: 'Path Visualization' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
@@ -244,25 +212,18 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-04-05',
         overview: 'A complete clone of the legendary Space Impact game, optimized for the ESP32-C3 SuperMini and SH1106 OLEDs. Features joystick control and enemy waves.',
+        wiring: [
+            { component: 'OLED SDA (I2C)', pin: 'GPIO 8' },
+            { component: 'OLED SCL (I2C)', pin: 'GPIO 9' },
+            { component: 'Joystick Y-Axis', pin: 'GPIO 0 (ADC)' },
+            { component: 'Joystick X-Axis', pin: 'GPIO 1 (ADC)' },
+            { component: 'Joystick Button', pin: 'GPIO 3 (Digital)' }
+        ],
         steps: [
             {
                 title: 'Hardware Requirements',
                 description: 'Gather: ESP32-C3 SuperMini, SH1106 128x64 OLED display, analog joystick module (VRx, VRy, SW pins).',
-                image: '/assets/projects/space-impact/components.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**Display (I2C):**
-• SDA → GPIO 8
-• SCL → GPIO 9
-
-**Joystick:**
-• Y-Axis → GPIO 0 (ADC)
-• X-Axis → GPIO 1 (ADC)
-• Button → GPIO 3 (Digital)
-                `,
-                image: '/assets/projects/space-impact/wiring.jpg' // PLACEHOLDER
+                image: '/assets/projects/space-impact/components.jpg'
             },
             {
                 title: 'Upload the Game',
@@ -272,12 +233,12 @@ export const projects = [
             {
                 title: 'Gameplay',
                 description: 'Move your spaceship with the joystick to dodge enemies and obstacles. Press the joystick button to shoot. Survive as long as possible!',
-                image: '/assets/projects/space-impact/gameplay.jpg' // PLACEHOLDER
+                image: '/assets/projects/space-impact/gameplay.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/space-impact/hardware.jpg', caption: 'Hardware Setup' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' },
+            { type: 'image', url: '/assets/projects/space-impact/hardware.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/SpaceImpact', size: 'GitHub' }
@@ -291,25 +252,18 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1580234550905-96d3fba4353f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-04-10',
         overview: 'The timeless Snake game brought to the ESP32 platform. Optimized for low-memory microcontrollers and smooth OLED rendering.',
+        wiring: [
+            { component: 'OLED SDA (I2C)', pin: 'GPIO 8' },
+            { component: 'OLED SCL (I2C)', pin: 'GPIO 9' },
+            { component: 'Joystick Y-Axis', pin: 'GPIO 0 (ADC)' },
+            { component: 'Joystick X-Axis', pin: 'GPIO 1 (ADC)' },
+            { component: 'Joystick Button', pin: 'GPIO 3 (Digital)' }
+        ],
         steps: [
             {
                 title: 'Hardware Setup',
                 description: 'Use the same hardware as SpaceImpact: ESP32-C3 SuperMini, SH1106 OLED, and analog joystick.',
-                image: '/assets/projects/retro-snake/hardware.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**Display (I2C):**
-• SDA → GPIO 8
-• SCL → GPIO 9
-
-**Joystick:**
-• Y-Axis → GPIO 0 (ADC)
-• X-Axis → GPIO 1 (ADC)
-• Button → GPIO 3 (Digital)
-                `,
-                image: '/assets/projects/retro-snake/wiring.jpg' // PLACEHOLDER
+                image: '/assets/projects/retro-snake/hardware.jpg'
             },
             {
                 title: 'Joystick Calibration',
@@ -324,12 +278,12 @@ export const projects = [
             {
                 title: 'How to Play',
                 description: 'Control the snake with the joystick. Eat food to grow longer. Avoid hitting walls or your own tail!',
-                image: '/assets/projects/retro-snake/gameplay.jpg' // PLACEHOLDER
+                image: '/assets/projects/retro-snake/gameplay.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/retro-snake/setup.jpg', caption: 'Setup' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' },
+            { type: 'image', url: '/assets/projects/retro-snake/setup.jpg', caption: 'Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/RetroSnake', size: 'GitHub' }
@@ -343,24 +297,17 @@ export const projects = [
         thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
         date: '2024-04-15',
         overview: 'A simplified graphics library/engine for displaying smooth bitmap animations on OLED screens, tailored for the ESP32-C3.',
+        wiring: [
+            { component: 'OLED SDA (I2C)', pin: 'GPIO 8' },
+            { component: 'OLED SCL (I2C)', pin: 'GPIO 9' },
+            { component: 'OLED VCC', pin: '3.3V' },
+            { component: 'OLED GND', pin: 'GND' }
+        ],
         steps: [
             {
                 title: 'Gather Components',
                 description: 'You need: ESP32-C3 SuperMini and an SH1106 128x64 OLED display. No additional input devices required.',
-                image: '/assets/projects/favorite-boy/components.jpg' // PLACEHOLDER
-            },
-            {
-                title: 'Wiring Diagram',
-                description: `
-**Display (I2C):**
-• SDA → GPIO 8
-• SCL → GPIO 9
-
-**Power:**
-• VCC → 3.3V
-• GND → GND
-                `,
-                image: '/assets/projects/favorite-boy/wiring.jpg' // PLACEHOLDER
+                image: '/assets/projects/favorite-boy/components.jpg'
             },
             {
                 title: 'Prepare Animation Frames',
@@ -380,12 +327,12 @@ export const projects = [
             {
                 title: 'Animation Loop',
                 description: 'In the main loop, iterate through frames and display each one with a delay. Use `display.drawBitmap()` for rendering.',
-                image: '/assets/projects/favorite-boy/animation.jpg' // PLACEHOLDER
+                image: '/assets/projects/favorite-boy/animation.jpg'
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' }, // PLACEHOLDER
-            { type: 'image', url: '/assets/projects/favorite-boy/display.jpg', caption: 'OLED Display' } // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' },
+            { type: 'image', url: '/assets/projects/favorite-boy/display.jpg', caption: 'OLED Display' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/FavoriteBoyOLED', size: 'GitHub' }
