@@ -1,6 +1,6 @@
 import MazeSolverThumbnail from '../assets/projects/maze-solver/thumbnail.jpg';
 import CompanionBotThumbnail from '../assets/projects/companion-bot/thumbnail.jpg';
-import SelfBalancingRobotThumbnail from '../assets/projects/self-balancing-robot/thumbnail.jpg';
+import SelfBalancingRobotThumbnail from '../assets/projects/self-balancing/thumbnail.jpg';
 
 
 export const projects = [
