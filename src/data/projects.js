@@ -10,18 +10,30 @@ export const projects = [
         steps: [
             {
                 title: 'Hardware Assembly',
-                description: 'Assemble the chassis with two DC motors and mount the ESP32 development board. Attach the motor driver (L298N) and connect power distribution.',
-                image: null
+                description: 'Assemble the chassis with two DC motors and mount the ESP32 development board. Attach the L298N motor driver and connect power distribution.',
+                image: '/assets/projects/maze-solver/assembly.jpg' // PLACEHOLDER - Replace with your image
+            },
+            {
+                title: 'Wiring Diagram',
+                description: `
+**Ultrasonic Sensors (HC-SR04):**
+• Front Sonar: Trig → GPIO 14, Echo → GPIO 35
+• Left Sonar (NW): Trig → GPIO 18, Echo → GPIO 13
+• Right Sonar (NE): Trig → GPIO 16, Echo → GPIO 34
+
+**Motors (L298N Driver):**
+• Left Motor: IN1 → GPIO 23, IN2 → GPIO 22, PWM → GPIO 25
+• Right Motor: IN3 → GPIO 21, IN4 → GPIO 19, PWM → GPIO 26
+
+**Control:**
+• Start Button: BOOT Button (GPIO 0)
+                `,
+                image: '/assets/projects/maze-solver/wiring.jpg' // PLACEHOLDER - Replace with your wiring diagram
             },
             {
                 title: 'Sensor Mounting',
                 description: 'Mount three HC-SR04 ultrasonic sensors at diagonal angles: North-West (45°), North (0°), and North-East (45°). This geometry enables predictive wall detection.',
-                image: 'https://images.unsplash.com/photo-1555255707-c07966088b7b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
-            },
-            {
-                title: 'Wiring & Connections',
-                description: 'Connect sensor trigger/echo pins to ESP32 GPIO. Wire motor driver inputs to ESP32 PWM pins. Ensure proper power isolation between logic and motors.',
-                image: null
+                image: '/assets/projects/maze-solver/sensors.jpg' // PLACEHOLDER
             },
             {
                 title: 'PID Tuning',
@@ -34,7 +46,11 @@ export const projects = [
                 image: null
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/maze_solver_wall-follower_bot', size: 'GitHub' }
         ]
@@ -50,18 +66,31 @@ export const projects = [
         steps: [
             {
                 title: 'Chassis Construction',
-                description: 'Build or 3D print a tall, narrow chassis. Mount two NEMA17 stepper motors or high-torque DC motors with encoders at the base.',
-                image: null
+                description: 'Build or 3D print a tall, narrow chassis. Mount two high-torque DC motors with encoders at the base.',
+                image: '/assets/projects/self-balancing/chassis.jpg' // PLACEHOLDER
+            },
+            {
+                title: 'Wiring Diagram',
+                description: `
+**MPU6050 IMU (I2C):**
+• SDA → GPIO 32
+• SCL → GPIO 33
+• INT → GPIO 27
+
+**Motors (L298N Driver):**
+• Motor A: ENA → GPIO 25, IN1 → GPIO 23, IN2 → GPIO 22
+• Motor B: ENB → GPIO 26, IN3 → GPIO 21, IN4 → GPIO 19
+
+**Power:**
+• 12V LiPo battery for motors
+• 5V regulator for ESP32 and MPU6050
+                `,
+                image: '/assets/projects/self-balancing/wiring.jpg' // PLACEHOLDER
             },
             {
                 title: 'MPU6050 Mounting',
                 description: 'Mount the MPU6050 IMU at the center of gravity. Ensure it is level and securely attached to minimize vibration noise.',
-                image: null
-            },
-            {
-                title: 'Motor Driver Setup',
-                description: 'Connect the L298N motor driver to ESP32. Wire motor A and B to the driver outputs. Connect PWM and direction pins.',
-                image: null
+                image: '/assets/projects/self-balancing/mpu6050.jpg' // PLACEHOLDER
             },
             {
                 title: 'IMU Calibration',
@@ -76,15 +105,19 @@ export const projects = [
             {
                 title: 'PID Loop Implementation',
                 description: 'Implement the PID control loop: read pitch angle, calculate error from setpoint (0°), compute motor output. Tune Kp first, then Kd, finally Ki.',
-                image: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80'
+                image: null
             },
             {
                 title: 'Web Dashboard',
-                description: 'Deploy the built-in web server on ESP32. Access the dashboard via WiFi to monitor pitch angle and adjust PID parameters in real-time without reflashing.',
-                image: null
+                description: 'Deploy the built-in web server on ESP32. Access the dashboard via WiFi to monitor pitch angle and adjust PID parameters in real-time.',
+                image: '/assets/projects/self-balancing/dashboard.jpg' // PLACEHOLDER
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/self-balancing/side-view.jpg', caption: 'Side View' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/self_balancing_robot', size: 'GitHub' }
         ]
@@ -101,7 +134,24 @@ export const projects = [
             {
                 title: 'Hardware Preparation',
                 description: 'Gather components: ESP32-S3 board, SH1106 128x64 OLED display, 2x SG90 micro servos, passive buzzer, and capacitive touch sensor.',
-                image: null
+                image: '/assets/projects/companion-bot/components.jpg' // PLACEHOLDER
+            },
+            {
+                title: 'Wiring Diagram',
+                description: `
+**Display (I2C):**
+• SDA → GPIO 8
+• SCL → GPIO 9
+
+**Servos:**
+• Nod Servo → GPIO 4
+• Shake Servo → GPIO 5
+
+**Audio & Input:**
+• Piezo Buzzer → GPIO 6
+• Capacitive Touch → GPIO 2
+                `,
+                image: '/assets/projects/companion-bot/wiring.jpg' // PLACEHOLDER
             },
             {
                 title: 'Display Wiring',
@@ -111,12 +161,7 @@ export const projects = [
             {
                 title: 'Servo Assembly',
                 description: 'Mount servos for head movements: one for nodding (up/down), one for shaking (left/right). Connect to PWM-capable GPIO pins.',
-                image: null
-            },
-            {
-                title: 'Touch Sensor Setup',
-                description: 'Wire the capacitive touch sensor to a touch-capable GPIO. Configure touch threshold for reliable pet/wake detection.',
-                image: null
+                image: '/assets/projects/companion-bot/servos.jpg' // PLACEHOLDER
             },
             {
                 title: 'RoboEyes Library',
@@ -131,7 +176,7 @@ export const projects = [
             {
                 title: 'Web Dashboard',
                 description: 'Access the companion bot\'s web interface to switch modes (Face, Clock, Pomodoro, Bitcoin, Weather) and send chat messages.',
-                image: null
+                image: '/assets/projects/companion-bot/web-dashboard.jpg' // PLACEHOLDER
             },
             {
                 title: 'Sound Effects',
@@ -139,7 +184,11 @@ export const projects = [
                 image: null
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/companion-bot/front-face.jpg', caption: 'Cute Face' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/companion_bot', size: 'GitHub' }
         ]
@@ -171,15 +220,18 @@ export const projects = [
             {
                 title: 'Running the Visualizer',
                 description: 'Start the development server with `npm run dev`. Open the browser to see real-time sensor readings, PID outputs, and path data.',
-                image: null
+                image: '/assets/projects/bot-visualizer/dashboard.jpg' // PLACEHOLDER
             },
             {
                 title: 'Understanding the UI',
                 description: 'The dashboard shows: sensor distances (left/center/right), motor speeds, PID error graph, and a 2D representation of the bot\'s path.',
-                image: null
+                image: '/assets/projects/bot-visualizer/ui-breakdown.jpg' // PLACEHOLDER
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-1.jpg', caption: 'Dashboard Overview' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-2.jpg', caption: 'Path Visualization' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
         ]
@@ -196,30 +248,37 @@ export const projects = [
             {
                 title: 'Hardware Requirements',
                 description: 'Gather: ESP32-C3 SuperMini, SH1106 128x64 OLED display, analog joystick module (VRx, VRy, SW pins).',
-                image: null
+                image: '/assets/projects/space-impact/components.jpg' // PLACEHOLDER
             },
             {
-                title: 'Display Connection',
-                description: 'Connect the SH1106 via I2C: SDA to GPIO8, SCL to GPIO9. Install Adafruit GFX and Adafruit SH110X libraries.',
-                image: null
+                title: 'Wiring Diagram',
+                description: `
+**Display (I2C):**
+• SDA → GPIO 8
+• SCL → GPIO 9
+
+**Joystick:**
+• Y-Axis → GPIO 0 (ADC)
+• X-Axis → GPIO 1 (ADC)
+• Button → GPIO 3 (Digital)
+                `,
+                image: '/assets/projects/space-impact/wiring.jpg' // PLACEHOLDER
             },
             {
-                title: 'Joystick Wiring',
-                description: 'Connect joystick VRx to an ADC pin for horizontal movement, VRy for vertical, and SW (button) to a digital GPIO for firing.',
-                image: null
-            },
-            {
-                title: 'Uploading the Game',
+                title: 'Upload the Game',
                 description: 'Open the project in Arduino IDE or PlatformIO. Select ESP32-C3 board, correct COM port, and upload.',
                 image: null
             },
             {
                 title: 'Gameplay',
                 description: 'Move your spaceship with the joystick to dodge enemies and obstacles. Press the joystick button to shoot. Survive as long as possible!',
-                image: null
+                image: '/assets/projects/space-impact/gameplay.jpg' // PLACEHOLDER
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/space-impact/hardware.jpg', caption: 'Hardware Setup' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/SpaceImpact', size: 'GitHub' }
         ]
@@ -236,12 +295,21 @@ export const projects = [
             {
                 title: 'Hardware Setup',
                 description: 'Use the same hardware as SpaceImpact: ESP32-C3 SuperMini, SH1106 OLED, and analog joystick.',
-                image: null
+                image: '/assets/projects/retro-snake/hardware.jpg' // PLACEHOLDER
             },
             {
-                title: 'I2C Configuration',
-                description: 'Confirm I2C pins (SDA: GPIO8, SCL: GPIO9) are correctly defined in the code. Adjust if using different GPIOs.',
-                image: null
+                title: 'Wiring Diagram',
+                description: `
+**Display (I2C):**
+• SDA → GPIO 8
+• SCL → GPIO 9
+
+**Joystick:**
+• Y-Axis → GPIO 0 (ADC)
+• X-Axis → GPIO 1 (ADC)
+• Button → GPIO 3 (Digital)
+                `,
+                image: '/assets/projects/retro-snake/wiring.jpg' // PLACEHOLDER
             },
             {
                 title: 'Joystick Calibration',
@@ -256,10 +324,13 @@ export const projects = [
             {
                 title: 'How to Play',
                 description: 'Control the snake with the joystick. Eat food to grow longer. Avoid hitting walls or your own tail!',
-                image: null
+                image: '/assets/projects/retro-snake/gameplay.jpg' // PLACEHOLDER
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/retro-snake/setup.jpg', caption: 'Setup' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/RetroSnake', size: 'GitHub' }
         ]
@@ -276,7 +347,20 @@ export const projects = [
             {
                 title: 'Gather Components',
                 description: 'You need: ESP32-C3 SuperMini and an SH1106 128x64 OLED display. No additional input devices required.',
-                image: null
+                image: '/assets/projects/favorite-boy/components.jpg' // PLACEHOLDER
+            },
+            {
+                title: 'Wiring Diagram',
+                description: `
+**Display (I2C):**
+• SDA → GPIO 8
+• SCL → GPIO 9
+
+**Power:**
+• VCC → 3.3V
+• GND → GND
+                `,
+                image: '/assets/projects/favorite-boy/wiring.jpg' // PLACEHOLDER
             },
             {
                 title: 'Prepare Animation Frames',
@@ -296,15 +380,13 @@ export const projects = [
             {
                 title: 'Animation Loop',
                 description: 'In the main loop, iterate through frames and display each one with a delay. Use `display.drawBitmap()` for rendering.',
-                image: null
-            },
-            {
-                title: 'Optimization Tips',
-                description: 'For smoother playback: store frames in PROGMEM, minimize buffer clears, and use partial screen updates if possible.',
-                image: null
+                image: '/assets/projects/favorite-boy/animation.jpg' // PLACEHOLDER
             }
         ],
-        gallery: [],
+        gallery: [
+            { type: 'image', url: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' }, // PLACEHOLDER
+            { type: 'image', url: '/assets/projects/favorite-boy/display.jpg', caption: 'OLED Display' } // PLACEHOLDER
+        ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/FavoriteBoyOLED', size: 'GitHub' }
         ]
