@@ -1,6 +1,10 @@
 import MazeSolverThumbnail from '../assets/projects/maze-solver/thumbnail.jpg';
 import CompanionBotThumbnail from '../assets/projects/companion-bot/thumbnail.jpg';
 import SelfBalancingRobotThumbnail from '../assets/projects/self-balancing/thumbnail.jpg';
+import BotVisualizerThumbnail from '../assets/projects/bot-visualizer/thumbnail.png';
+import SpaceImpactThumbnail from '../assets/projects/space-impact/thumbnail.jpg';
+import RetroSnakeThumbnail from '../assets/projects/retro-snake/thumbnail.jpg';
+import FavoriteBoyThumbnail from '../assets/projects/favorite-boy/thumbnail.jpg';
 
 
 export const projects = [
@@ -170,7 +174,7 @@ export const projects = [
         title: 'BotVisualizer',
         description: 'Real-time web telemetry visualizer for the maze solver bot using WebSockets and React.',
         tags: ['React', 'JavaScript', 'WebSockets', 'Vite', 'Visualization'],
-        thumbnail: 'https://images.unsplash.com/photo-1551288049-bebda4e38f71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: BotVisualizerThumbnail,
         date: '2024-02-15',
         overview: 'A web application built with React and Vite to visualize the internal state and sensor data of the maze-solving robot in real-time.',
         wiring: [], // No hardware wiring for web project
@@ -202,8 +206,8 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-1.jpg', caption: 'Dashboard Overview' },
-            { type: 'image', url: '/assets/projects/bot-visualizer/screenshot-2.jpg', caption: 'Path Visualization' }
+            { type: 'image', url: '/assets/projects/bot-visualizer/pathvisualization.png', caption: 'Dashboard Overview' },
+            { type: 'image', url: '/assets/projects/bot-visualizer/pathoptimized.png', caption: 'Path Visualization' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
@@ -214,7 +218,7 @@ export const projects = [
         title: 'SpaceImpact',
         description: 'Faithful recreation of the classic Nokia Space Impact game for ESP32 and OLED displays.',
         tags: ['C++', 'GameDev', 'ESP32', 'OLED', 'Retro'],
-        thumbnail: 'https://images.unsplash.com/photo-1550745165-9bc0b252726f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: SpaceImpactThumbnail,
         date: '2024-04-05',
         overview: 'A complete clone of the legendary Space Impact game, optimized for the ESP32-C3 SuperMini and SH1106 OLEDs. Features joystick control and enemy waves.',
         wiring: [
@@ -243,7 +247,7 @@ export const projects = [
         ],
         gallery: [
             { type: 'image', url: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' },
-            { type: 'image', url: '/assets/projects/space-impact/hardware.jpg', caption: 'Hardware Setup' }
+            { type: 'image', url: '/assets/projects/space-impact/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/SpaceImpact', size: 'GitHub' }
@@ -254,7 +258,7 @@ export const projects = [
         title: 'RetroSnake',
         description: 'Classic Snake game implementation for ESP32-C3 with analog joystick support.',
         tags: ['C++', 'GameDev', 'ESP32', 'OLED'],
-        thumbnail: 'https://images.unsplash.com/photo-1580234550905-96d3fba4353f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: RetroSnakeThumbnail,
         date: '2024-04-10',
         overview: 'The timeless Snake game brought to the ESP32 platform. Optimized for low-memory microcontrollers and smooth OLED rendering.',
         wiring: [
@@ -288,7 +292,7 @@ export const projects = [
         ],
         gallery: [
             { type: 'image', url: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' },
-            { type: 'image', url: '/assets/projects/retro-snake/setup.jpg', caption: 'Setup' }
+            { type: 'image', url: '/assets/projects/retro-snake/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/RetroSnake', size: 'GitHub' }
@@ -299,7 +303,7 @@ export const projects = [
         title: 'FavoriteBoyOLED',
         description: 'High-performance bitmap animation engine for SH1106 OLED displays on ESP32.',
         tags: ['C++', 'Graphics', 'ESP32', 'Arduino', 'Animation'],
-        thumbnail: 'https://images.unsplash.com/photo-1550751827-4bd374c3f58b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80',
+        thumbnail: FavoriteBoyThumbnail,
         date: '2024-04-15',
         overview: 'A simplified graphics library/engine for displaying smooth bitmap animations on OLED screens, tailored for the ESP32-C3.',
         wiring: [
@@ -337,7 +341,7 @@ export const projects = [
         ],
         gallery: [
             { type: 'image', url: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' },
-            { type: 'image', url: '/assets/projects/favorite-boy/display.jpg', caption: 'OLED Display' }
+            { type: 'image', url: '/assets/projects/favorite-boy/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/FavoriteBoyOLED', size: 'GitHub' }
