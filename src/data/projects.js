@@ -51,7 +51,11 @@ export const projects = [
         gallery: [
             { image: `${BASE_URL}/assets/projects/maze-solver/front-view.jpg`, caption: '3D Model Front View' },
             { image: `${BASE_URL}/assets/projects/maze-solver/top-view.jpg`, caption: '3D Model Top View' },
-            { image: `${BASE_URL}/assets/projects/maze-solver/in-action.jpg`, caption: 'In Action' }
+            {
+                type: `youtube`,
+                videoId: `vUuBfmftLQ4`,
+                caption: `In Action`
+            }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/maze_solver_wall-follower_bot', size: 'GitHub' }
@@ -107,7 +111,11 @@ export const projects = [
         ],
         gallery: [
             { image: `${BASE_URL}/assets/projects/self-balancing/sideview.jpg`, caption: 'Side View' },
-            { image: `${BASE_URL}/assets/projects/self-balancing/balancing.jpg`, caption: 'Balancing' },
+            {
+                type: `youtube`,
+                videoId: `TK-PE49eN74`,
+                caption: `Self Balancing Demo`
+            },
             { image: `${BASE_URL}/assets/projects/self-balancing/electronics.png`, caption: 'Electronics' }
         ],
         downloads: [
@@ -164,7 +172,11 @@ export const projects = [
         ],
         gallery: [
             { image: `${BASE_URL}/assets/projects/companion-bot/cuteface.jpg`, caption: 'Cute Face' },
-            { image: `${BASE_URL}/assets/projects/companion-bot/expressions.jpg`, caption: 'Expressions' },
+            {
+                type: `youtube`,
+                videoId: `7tV34vv1M`,
+                caption: `Demo Video`
+            }
 
         ],
         downloads: [
@@ -248,7 +260,11 @@ export const projects = [
             }
         ],
         gallery: [
-            { image: `${BASE_URL}/assets/projects/space-impact/game-screen.jpg`, caption: 'Game Screen' },
+            {
+                type: `youtube`,
+                videoId: `6a7KJNsjUE0`,
+                caption: `Gameplay Demo`
+            },
             { image: `${BASE_URL}/assets/projects/space-impact/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
@@ -293,7 +309,11 @@ export const projects = [
             }
         ],
         gallery: [
-            { image: `${BASE_URL}/assets/projects/retro-snake/game-screen.jpg`, caption: 'Game Screen' },
+            {
+                type: `youtube`,
+                videoId: `Pu2f6jp2hwc`,
+                caption: `Gameplay Demo`
+            },
             { image: `${BASE_URL}/assets/projects/retro-snake/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
@@ -342,7 +362,12 @@ export const projects = [
             }
         ],
         gallery: [
-            { image: `${BASE_URL}/assets/projects/favorite-boy/animation-demo.jpg`, caption: 'Animation Demo' },
+            {
+                type: `youtube`,
+                videoId: `8c2Almk1yDg`,
+                caption: `Animation Demo`
+            },
+
             { image: `${BASE_URL}/assets/projects/favorite-boy/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
