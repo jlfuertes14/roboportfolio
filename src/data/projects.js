@@ -207,7 +207,7 @@ export const projects = [
         ],
         gallery: [
             { image: '/assets/projects/bot-visualizer/pathvisualization.png', caption: 'Dashboard Overview' },
-            { image: '/assets/projects/bot-visualizer/pathoptimized.png', caption: 'Path Visualization' }
+            { image: '/assets/projects/bot-visualizer/pathoptimized.jpg', caption: 'Path Visualization' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
