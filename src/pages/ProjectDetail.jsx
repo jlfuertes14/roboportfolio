@@ -7,6 +7,7 @@ import { projects } from '../data/projects';
 const ProjectDetail = () => {
   const { id } = useParams();
   const project = projects.find(p => p.id === id);
+  const [lightboxImage, setLightboxImage] = React.useState(null);
 
   if (!project) {
     return (
@@ -89,12 +90,21 @@ const ProjectDetail = () => {
                   {project.gallery.map((item, index) => (
                     <div key={index} className="gallery-item">
                       {item.type === 'video' ? (
-                        <div className="video-placeholder">
-                          <FaPlay className="play-icon" />
-                          <span>{item.caption}</span>
-                        </div>
+                        <video
+                          controls
+                          className="gallery-video"
+                          poster={item.poster}
+                        >
+                          <source src={item.image} type="video/mp4" />
+                          Your browser does not support the video tag.
+                        </video>
                       ) : (
-                        <img src={item.image} alt={item.caption} />
+                        <img
+                          src={item.image}
+                          alt={item.caption}
+                          onClick={() => setLightboxImage(item)}
+                          style={{ cursor: 'pointer' }}
+                        />
                       )}
                       <div className="caption">{item.caption}</div>
                     </div>
@@ -126,6 +136,17 @@ const ProjectDetail = () => {
           </div>
         </div>
       </div>
+
+      {/* Lightbox Modal */}
+      {lightboxImage && (
+        <div className="lightbox-overlay" onClick={() => setLightboxImage(null)}>
+          <div className="lightbox-content" onClick={(e) => e.stopPropagation()}>
+            <button className="lightbox-close" onClick={() => setLightboxImage(null)}>×</button>
+            <img src={lightboxImage.image} alt={lightboxImage.caption} />
+            <div className="lightbox-caption">{lightboxImage.caption}</div>
+          </div>
+        </div>
+      )}
 
       <style>{`
         .project-header {
@@ -362,6 +383,86 @@ const ProjectDetail = () => {
           border-radius: 4px;
           font-family: var(--font-family-mono);
           font-size: 0.9rem;
+        }
+
+        /* Lightbox Styles */
+        .lightbox-overlay {
+          position: fixed;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          background: rgba(0, 0, 0, 0.95);
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          z-index: 9999;
+          padding: 2rem;
+          cursor: zoom-out;
+        }
+
+        .lightbox-content {
+          position: relative;
+          max-width: 90vw;
+          max-height: 90vh;
+          cursor: default;
+        }
+
+        .lightbox-content img {
+          max-width: 100%;
+          max-height: 85vh;
+          object-fit: contain;
+          border-radius: 8px;
+        }
+
+        .lightbox-close {
+          position: absolute;
+          top: -2rem;
+          right: 0;
+          background: transparent;
+          border: none;
+          color: white;
+          font-size: 3rem;
+          cursor: pointer;
+          line-height: 1;
+          padding: 0;
+          width: 3rem;
+          height: 3rem;
+          display: flex;
+          align-items: center;
+          justify-content: center;
+          transition: color 0.2s;
+        }
+
+        .lightbox-close:hover {
+          color: var(--color-accent);
+        }
+
+        .lightbox-caption {
+          color: white;
+          text-align: center;
+          margin-top: 1rem;
+          font-size: 1.1rem;
+        }
+
+        /* Video Gallery Styles */
+        .gallery-video {
+          width: 100%;
+          height: 200px;
+          object-fit: cover;
+          display: block;
+          border-radius: 8px 8px 0 0;
+        }
+
+        @media (max-width: 768px) {
+          .lightbox-content img {
+            max-height: 70vh;
+          }
+          
+          .lightbox-close {
+            top: -3rem;
+            font-size: 2.5rem;
+          }
         }
       `}</style>
     </div>
