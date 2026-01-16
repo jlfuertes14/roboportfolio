@@ -6,6 +6,8 @@ import SpaceImpactThumbnail from '../assets/projects/space-impact/thumbnail.jpg'
 import RetroSnakeThumbnail from '../assets/projects/retro-snake/thumbnail.jpg';
 import FavoriteBoyThumbnail from '../assets/projects/favorite-boy/thumbnail.jpg';
 
+// Base URL for GitHub Pages deployment
+const BASE_URL = import.meta.env.BASE_URL;
 
 export const projects = [
     {
@@ -28,12 +30,12 @@ export const projects = [
             {
                 title: 'Hardware Assembly',
                 description: 'Assemble the chassis with two DC motors and mount the ESP32 development board. Attach the L298N motor driver and connect power distribution.',
-                image: '/assets/projects/maze-solver/assembly.jpg'
+                image: `${BASE_URL}/assets/projects/maze-solver/assembly.jpg`
             },
             {
                 title: 'Sensor Mounting',
                 description: 'Mount three HC-SR04 ultrasonic sensors at diagonal angles: North-West (45°), North (0°), and North-East (45°). This geometry enables predictive wall detection.',
-                image: '/assets/projects/maze-solver/sensors.jpg'
+                image: `${BASE_URL}/assets/projects/maze-solver/sensors.jpg`
             },
             {
                 title: 'PID Tuning',
@@ -47,9 +49,9 @@ export const projects = [
             }
         ],
         gallery: [
-            { image: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' },
-            { image: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' },
-            { image: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' }
+            { image: `${BASE_URL}/assets/projects/maze-solver/front-view.jpg`, caption: 'Front View' },
+            { image: `${BASE_URL}/assets/projects/maze-solver/top-view.jpg`, caption: 'Top View' },
+            { image: `${BASE_URL}/assets/projects/maze-solver/in-action.jpg`, caption: 'In Action' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/maze_solver_wall-follower_bot', size: 'GitHub' }
@@ -75,12 +77,12 @@ export const projects = [
             {
                 title: 'Chassis Construction',
                 description: 'Build or 3D print a tall, narrow chassis. Mount two high-torque DC motors with encoders at the base.',
-                image: '/assets/projects/self-balancing/chassis.jpg'
+                image: `${BASE_URL}/assets/projects/self-balancing/chassis.jpg`
             },
             {
                 title: 'MPU6050 Mounting',
                 description: 'Mount the MPU6050 IMU at the center of gravity. Ensure it is level and securely attached to minimize vibration noise.',
-                image: '/assets/projects/self-balancing/mpu6050.jpg'
+                image: `${BASE_URL}/assets/projects/self-balancing/mpu6050.jpg`
             },
             {
                 title: 'IMU Calibration',
@@ -100,13 +102,13 @@ export const projects = [
             {
                 title: 'Web Dashboard',
                 description: 'Deploy the built-in web server on ESP32. Access the dashboard via WiFi to monitor pitch angle and adjust PID parameters in real-time.',
-                image: '/assets/projects/self-balancing/dashboard.jpg'
+                image: `${BASE_URL}/assets/projects/self-balancing/dashboard.jpg`
             }
         ],
         gallery: [
-            { image: '/assets/projects/self-balancing/sideview.jpg', caption: 'Side View' },
-            { image: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' },
-            { image: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' }
+            { image: `${BASE_URL}/assets/projects/self-balancing/sideview.jpg`, caption: 'Side View' },
+            { image: `${BASE_URL}/assets/projects/self-balancing/balancing.jpg`, caption: 'Balancing' },
+            { image: `${BASE_URL}/assets/projects/self-balancing/electronics.jpg`, caption: 'Electronics' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/self_balancing_robot', size: 'GitHub' }
@@ -132,7 +134,7 @@ export const projects = [
             {
                 title: 'Hardware Preparation',
                 description: 'Gather components: ESP32-S3 board, SH1106 128x64 OLED display, 2x SG90 micro servos, passive buzzer, and capacitive touch sensor.',
-                image: '/assets/projects/companion-bot/components.jpg'
+                image: `${BASE_URL}/assets/projects/companion-bot/components.jpg`
             },
             {
                 title: 'Display Wiring',
@@ -142,7 +144,7 @@ export const projects = [
             {
                 title: 'Servo Assembly',
                 description: 'Mount servos for head movements: one for nodding (up/down), one for shaking (left/right). Connect to PWM-capable GPIO pins.',
-                image: '/assets/projects/companion-bot/servos.jpg'
+                image: `${BASE_URL}/assets/projects/companion-bot/servos.jpg`
             },
             {
                 title: 'RoboEyes Library',
@@ -157,13 +159,13 @@ export const projects = [
             {
                 title: 'Web Dashboard',
                 description: 'Access the companion bot\'s web interface to switch modes (Face, Clock, Pomodoro, Bitcoin, Weather) and send chat messages.',
-                image: '/assets/projects/companion-bot/web-dashboard.jpg'
+                image: `${BASE_URL}/assets/projects/companion-bot/web-dashboard.jpg`
             }
         ],
         gallery: [
-            { image: '/assets/projects/companion-bot/cuteface.jpg', caption: 'Cute Face' },
-            { image: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' },
-            { image: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' }
+            { image: `${BASE_URL}/assets/projects/companion-bot/cuteface.jpg`, caption: 'Cute Face' },
+            { image: `${BASE_URL}/assets/projects/companion-bot/expressions.jpg`, caption: 'Expressions' },
+            { image: `${BASE_URL}/assets/projects/companion-bot/full-setup.jpg`, caption: 'Full Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/companion_bot', size: 'GitHub' }
@@ -197,17 +199,17 @@ export const projects = [
             {
                 title: 'Running the Visualizer',
                 description: 'Start the development server with `npm run dev`. Open the browser to see real-time sensor readings, PID outputs, and path data.',
-                image: '/assets/projects/bot-visualizer/dashboard.jpg'
+                image: `${BASE_URL}/assets/projects/bot-visualizer/dashboard.jpg`
             },
             {
                 title: 'Understanding the UI',
                 description: 'The dashboard shows: sensor distances (left/center/right), motor speeds, PID error graph, and a 2D representation of the bot\'s path.',
-                image: '/assets/projects/bot-visualizer/ui-breakdown.jpg'
+                image: `${BASE_URL}/assets/projects/bot-visualizer/ui-breakdown.jpg`
             }
         ],
         gallery: [
-            { image: '.../assets/projects/bot-visualizer/pathvisualization.png', caption: 'Dashboard Overview' },
-            { image: '.../assets/projects/bot-visualizer/pathoptimized.jpg', caption: 'Path Visualization' }
+            { image: `${BASE_URL}/assets/projects/bot-visualizer/pathvisualization.png`, caption: 'Dashboard Overview' },
+            { image: `${BASE_URL}/assets/projects/bot-visualizer/pathoptimized.jpg`, caption: 'Path Visualization' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
@@ -232,7 +234,7 @@ export const projects = [
             {
                 title: 'Hardware Requirements',
                 description: 'Gather: ESP32-C3 SuperMini, SH1106 128x64 OLED display, analog joystick module (VRx, VRy, SW pins).',
-                image: '/assets/projects/space-impact/components.jpg'
+                image: `${BASE_URL}/assets/projects/space-impact/components.jpg`
             },
             {
                 title: 'Upload the Game',
@@ -242,12 +244,12 @@ export const projects = [
             {
                 title: 'Gameplay',
                 description: 'Move your spaceship with the joystick to dodge enemies and obstacles. Press the joystick button to shoot. Survive as long as possible!',
-                image: '/assets/projects/space-impact/gameplay.jpg'
+                image: `${BASE_URL}/assets/projects/space-impact/gameplay.jpg`
             }
         ],
         gallery: [
-            { image: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' },
-            { image: '/assets/projects/space-impact/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: `${BASE_URL}/assets/projects/space-impact/game-screen.jpg`, caption: 'Game Screen' },
+            { image: `${BASE_URL}/assets/projects/space-impact/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/SpaceImpact', size: 'GitHub' }
@@ -272,7 +274,7 @@ export const projects = [
             {
                 title: 'Hardware Setup',
                 description: 'Use the same hardware as SpaceImpact: ESP32-C3 SuperMini, SH1106 OLED, and analog joystick.',
-                image: '/assets/projects/retro-snake/hardware.jpg'
+                image: `${BASE_URL}/assets/projects/retro-snake/hardware.jpg`
             },
             {
                 title: 'Joystick Calibration',
@@ -287,12 +289,12 @@ export const projects = [
             {
                 title: 'How to Play',
                 description: 'Control the snake with the joystick. Eat food to grow longer. Avoid hitting walls or your own tail!',
-                image: '/assets/projects/retro-snake/gameplay.jpg'
+                image: `${BASE_URL}/assets/projects/retro-snake/gameplay.jpg`
             }
         ],
         gallery: [
-            { image: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' },
-            { image: '/assets/projects/retro-snake/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: `${BASE_URL}/assets/projects/retro-snake/game-screen.jpg`, caption: 'Game Screen' },
+            { image: `${BASE_URL}/assets/projects/retro-snake/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/RetroSnake', size: 'GitHub' }
@@ -316,7 +318,7 @@ export const projects = [
             {
                 title: 'Gather Components',
                 description: 'You need: ESP32-C3 SuperMini and an SH1106 128x64 OLED display. No additional input devices required.',
-                image: '/assets/projects/favorite-boy/components.jpg'
+                image: `${BASE_URL}/assets/projects/favorite-boy/components.jpg`
             },
             {
                 title: 'Prepare Animation Frames',
@@ -336,12 +338,12 @@ export const projects = [
             {
                 title: 'Animation Loop',
                 description: 'In the main loop, iterate through frames and display each one with a delay. Use `display.drawBitmap()` for rendering.',
-                image: '/assets/projects/favorite-boy/animation.jpg'
+                image: `${BASE_URL}/assets/projects/favorite-boy/animation.jpg`
             }
         ],
         gallery: [
-            { image: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' },
-            { image: '/assets/projects/favorite-boy/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: `${BASE_URL}/assets/projects/favorite-boy/animation-demo.jpg`, caption: 'Animation Demo' },
+            { image: `${BASE_URL}/assets/projects/favorite-boy/hardware-setup.jpg`, caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/FavoriteBoyOLED', size: 'GitHub' }
