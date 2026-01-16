@@ -4,46 +4,51 @@ import { motion } from 'framer-motion';
 import { FaArrowRight } from 'react-icons/fa';
 
 const ProjectCard = ({ project, index }) => {
-    return (
-        <motion.div
-            initial={{ opacity: 0, y: 20 }}
-            animate={{ opacity: 1, y: 0 }}
-            transition={{ duration: 0.5, delay: index * 0.1 }}
-            className="project-card"
-        >
-            <div className="card-image-container">
-                <img src={project.thumbnail} alt={project.title} className="card-image" />
-                <div className="card-overlay">
-                    <Link to={`/project/${project.id}`} className="btn btn-primary">
-                        View Project
-                    </Link>
-                </div>
-            </div>
-            <div className="card-content">
-                <div className="card-tags">
-                    {project.tags.slice(0, 3).map(tag => (
-                        <span key={tag} className="tag">{tag}</span>
-                    ))}
-                </div>
-                <h3 className="card-title">{project.title}</h3>
-                <p className="card-description">{project.description}</p>
-                <Link to={`/project/${project.id}`} className="card-link">
-                    Read More <FaArrowRight />
-                </Link>
-            </div>
+  return (
+    <motion.div
+      initial={{ opacity: 0, y: 20 }}
+      animate={{ opacity: 1, y: 0 }}
+      transition={{ duration: 0.5, delay: index * 0.1 }}
+      className="project-card"
+    >
+      <div className="card-image-container">
+        <img src={project.thumbnail} alt={project.title} className="card-image" />
+        <div className="card-overlay">
+          <Link to={`/project/${project.id}`} className="btn btn-primary">
+            View Project
+          </Link>
+        </div>
+      </div>
+      <div className="card-content">
+        <div className="card-tags">
+          {project.tags.slice(0, 3).map(tag => (
+            <span key={tag} className="tag">{tag}</span>
+          ))}
+        </div>
+        <h3 className="card-title">{project.title}</h3>
+        <p className="card-description">{project.description}</p>
+        <Link to={`/project/${project.id}`} className="card-link">
+          Read More <FaArrowRight />
+        </Link>
+      </div>
 
-            <style>{`
+      <style>{`
         .project-card {
           background: var(--color-bg-card);
           border: 1px solid var(--color-border);
           border-radius: 8px;
           overflow: hidden;
-          transition: transform var(--transition-normal), box-shadow var(--transition-normal);
+          transition: transform 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275), 
+                      box-shadow 0.3s ease,
+                      border-color 0.3s ease;
+          transform-style: preserve-3d;
+          perspective: 1000px;
         }
 
         .project-card:hover {
-          transform: translateY(-5px);
-          box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+          transform: translateY(-8px) rotateX(2deg) rotateY(-2deg);
+          box-shadow: 0 20px 40px rgba(0, 0, 0, 0.4),
+                      0 0 30px rgba(255, 159, 28, 0.15);
           border-color: var(--color-accent);
         }
 
@@ -96,7 +101,7 @@ const ProjectCard = ({ project, index }) => {
         .tag {
           font-size: 0.75rem;
           color: var(--color-accent);
-          background: rgba(0, 243, 255, 0.1);
+          background: rgba(255, 159, 28, 0.1);
           padding: 0.25rem 0.5rem;
           border-radius: 4px;
           font-family: var(--font-family-mono);
@@ -128,8 +133,8 @@ const ProjectCard = ({ project, index }) => {
           color: var(--color-accent);
         }
       `}</style>
-        </motion.div>
-    );
+    </motion.div>
+  );
 };
 
 export default ProjectCard;

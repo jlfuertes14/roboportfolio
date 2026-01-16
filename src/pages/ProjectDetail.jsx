@@ -22,7 +22,7 @@ const ProjectDetail = () => {
     <div className="project-detail">
       <div className="project-header">
         <div className="container">
-          <Link to="/" className="back-link"><FaArrowLeft /> Back to Projects</Link>
+          <Link to="/projects" className="back-link"><FaArrowLeft /> Back to Projects</Link>
           <h1 className="project-title">{project.title}</h1>
           <div className="project-meta">
             <span className="date">{project.date}</span>

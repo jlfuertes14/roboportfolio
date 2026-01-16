@@ -1,29 +1,31 @@
 :root {
-  /* Color Palette - Tech Orange Robotics Theme */
+  /* Color Palette - Tech Amber/Gold Robotics Theme */
   --color-bg-primary: #0a0a0a;
   --color-bg-secondary: #111111;
-  --color-bg-card: #1a1a1a;
-  
+  --color-bg-card: #161616;
+
   --color-text-primary: #ffffff;
-  --color-text-secondary: #b0b0b0;
-  --color-text-accent: #FF6B35; /* Tech Orange */
-  
-  --color-accent: #FF6B35;
-  --color-accent-secondary: #FF8C42; /* Lighter Orange */
-  --color-accent-glow: rgba(255, 107, 53, 0.4);
+  --color-text-secondary: #bfbfbf;
+  --color-text-accent: #FF9F1C;
+  /* Logo Amber */
+
+  --color-accent: #FF9F1C;
+  --color-accent-secondary: #FFBF69;
+  /* Lighter Gold */
+  --color-accent-glow: rgba(255, 159, 28, 0.35);
   --color-border: #2a2a2a;
-  
+
   /* Typography */
   --font-family-main: 'Inter', system-ui, -apple-system, sans-serif;
   --font-family-mono: 'Fira Code', monospace;
-  
+
   /* Spacing */
   --spacing-xs: 0.5rem;
   --spacing-sm: 1rem;
   --spacing-md: 2rem;
   --spacing-lg: 4rem;
   --spacing-xl: 8rem;
-  
+
   /* Transitions */
   --transition-fast: 0.2s ease;
   --transition-normal: 0.3s ease;
@@ -41,6 +43,85 @@ body {
   font-family: var(--font-family-main);
   line-height: 1.6;
   -webkit-font-smoothing: antialiased;
+  position: relative;
+}
+
+/* Animated Grid Background */
+body::before {
+  content: '';
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-image:
+    linear-gradient(rgba(255, 159, 28, 0.03) 1px, transparent 1px),
+    linear-gradient(90deg, rgba(255, 159, 28, 0.03) 1px, transparent 1px);
+  background-size: 50px 50px;
+  pointer-events: none;
+  z-index: -1;
+  animation: gridPulse 8s ease-in-out infinite;
+}
+
+/* Radial glow at center */
+body::after {
+  content: '';
+  position: fixed;
+  top: 50%;
+  left: 50%;
+  width: 100vw;
+  height: 100vh;
+  transform: translate(-50%, -50%);
+  background: radial-gradient(ellipse at center, rgba(255, 159, 28, 0.08) 0%, transparent 60%);
+  pointer-events: none;
+  z-index: -1;
+}
+
+/* Keyframe Animations */
+@keyframes gridPulse {
+
+  0%,
+  100% {
+    opacity: 0.5;
+  }
+
+  50% {
+    opacity: 1;
+  }
+}
+
+@keyframes float {
+
+  0%,
+  100% {
+    transform: translateY(0px);
+  }
+
+  50% {
+    transform: translateY(-10px);
+  }
+}
+
+@keyframes glow {
+
+  0%,
+  100% {
+    box-shadow: 0 0 5px var(--color-accent-glow);
+  }
+
+  50% {
+    box-shadow: 0 0 20px var(--color-accent-glow), 0 0 30px var(--color-accent-glow);
+  }
+}
+
+@keyframes shimmer {
+  0% {
+    background-position: -200% 0;
+  }
+
+  100% {
+    background-position: 200% 0;
+  }
 }
 
 a {
@@ -93,7 +174,12 @@ a:hover {
 }
 
 /* Typography Utilities */
-h1, h2, h3, h4, h5, h6 {
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
   line-height: 1.2;
   margin-bottom: var(--spacing-sm);
 }

@@ -1,20 +1,41 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
 import { Link, Outlet } from 'react-router-dom';
 import { FaRobot, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Layout = () => {
+  const [scrollProgress, setScrollProgress] = useState(0);
+
+  useEffect(() => {
+    const handleScroll = () => {
+      const totalHeight = document.documentElement.scrollHeight - window.innerHeight;
+      const progress = (window.scrollY / totalHeight) * 100;
+      setScrollProgress(progress);
+    };
+
+    window.addEventListener('scroll', handleScroll);
+    return () => window.removeEventListener('scroll', handleScroll);
+  }, []);
+
   return (
     <div className="layout">
+      {/* Scroll Progress Indicator */}
+      <div
+        className="scroll-progress"
+        style={{ width: `${scrollProgress}%` }}
+      />
+
       <header className="header">
         <div className="container header-content">
           <Link to="/" className="logo">
             <img src={`${import.meta.env.BASE_URL}jl-robotics-logo.png`} alt="JL-Robotics" className="logo-img" />
           </Link>
           <nav className="nav">
-            <Link to="/" className="nav-link">Projects</Link>
-            <a href="#" className="nav-link">About</a>
-            <a href="#" className="nav-link">Contact</a>
+            <Link to="/projects" className="nav-link">Projects</Link>
+            <Link to="/resources" className="nav-link">Resources</Link>
           </nav>
+          <a href="https://jlfuertes14.github.io/my-portfolio" className="nav-link external-link">
+            ← Visit My Portfolio
+          </a>
         </div>
       </header>
 
@@ -39,6 +60,17 @@ const Layout = () => {
           display: flex;
           flex-direction: column;
           min-height: 100vh;
+        }
+
+        .scroll-progress {
+          position: fixed;
+          top: 0;
+          left: 0;
+          height: 3px;
+          background: linear-gradient(90deg, var(--color-accent), var(--color-accent-secondary));
+          z-index: 1000;
+          transition: width 0.1s ease-out;
+          box-shadow: 0 0 10px var(--color-accent-glow);
         }
 
         .header {
@@ -71,8 +103,8 @@ const Layout = () => {
         }
 
         .logo-img {
-          height: 40px;
-          width: auto;
+          height: auto;
+          width: 220px; /* Adjust this value to change the length */
           border-radius: 4px;
         }
 
@@ -128,6 +160,31 @@ const Layout = () => {
 
         .social-link:hover {
           color: var(--color-accent);
+        }
+        .external-link {
+          margin-left: 2rem;
+          font-size: 0.9rem;
+          opacity: 0.7;
+          border-left: 1px solid var(--color-border);
+          padding-left: 1.5rem;
+        }
+
+        .external-link:hover {
+          opacity: 1;
+        }
+
+        @media (max-width: 768px) {
+          .header .container {
+            flex-direction: column;
+            gap: 1rem;
+          }
+          
+          .external-link {
+            margin-left: 0;
+            border-left: none;
+            padding-left: 0;
+            margin-top: 0.5rem;
+          }
         }
       `}</style>
     </div>
