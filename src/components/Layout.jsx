@@ -3,39 +3,38 @@ import { Link, Outlet } from 'react-router-dom';
 import { FaRobot, FaGithub, FaLinkedin } from 'react-icons/fa';
 
 const Layout = () => {
-    return (
-        <div className="layout">
-            <header className="header">
-                <div className="container header-content">
-                    <Link to="/" className="logo">
-                        <FaRobot className="logo-icon" />
-                        <span className="logo-text">ROBO<span className="text-accent">PORTFOLIO</span></span>
-                    </Link>
-                    <nav className="nav">
-                        <Link to="/" className="nav-link">Projects</Link>
-                        <a href="#" className="nav-link">About</a>
-                        <a href="#" className="nav-link">Contact</a>
-                    </nav>
-                </div>
-            </header>
+  return (
+    <div className="layout">
+      <header className="header">
+        <div className="container header-content">
+          <Link to="/" className="logo">
+            <img src={`${import.meta.env.BASE_URL}jl-robotics-logo.png`} alt="JL-Robotics" className="logo-img" />
+          </Link>
+          <nav className="nav">
+            <Link to="/" className="nav-link">Projects</Link>
+            <a href="#" className="nav-link">About</a>
+            <a href="#" className="nav-link">Contact</a>
+          </nav>
+        </div>
+      </header>
 
-            <main className="main-content">
-                <Outlet />
-            </main>
+      <main className="main-content">
+        <Outlet />
+      </main>
 
-            <footer className="footer">
-                <div className="container footer-content">
-                    <div className="footer-left">
-                        <p>&copy; {new Date().getFullYear()} Robotics Portfolio. Built for the future.</p>
-                    </div>
-                    <div className="footer-right">
-                        <a href="#" className="social-link"><FaGithub /></a>
-                        <a href="#" className="social-link"><FaLinkedin /></a>
-                    </div>
-                </div>
-            </footer>
+      <footer className="footer">
+        <div className="container footer-content">
+          <div className="footer-left">
+            <p>&copy; {new Date().getFullYear()} JL-Robotics. Innovating with Embedded Systems & Robotics.</p>
+          </div>
+          <div className="footer-right">
+            <a href="https://github.com/jlfuertes14" target="_blank" rel="noopener noreferrer" className="social-link"><FaGithub /></a>
+            <a href="https://www.linkedin.com/in/jl-fuertes" target="_blank" rel="noopener noreferrer" className="social-link"><FaLinkedin /></a>
+          </div>
+        </div>
+      </footer>
 
-            <style>{`
+      <style>{`
         .layout {
           display: flex;
           flex-direction: column;
@@ -69,6 +68,12 @@ const Layout = () => {
 
         .logo-icon {
           color: var(--color-accent);
+        }
+
+        .logo-img {
+          height: 40px;
+          width: auto;
+          border-radius: 4px;
         }
 
         .nav {
@@ -125,8 +130,8 @@ const Layout = () => {
           color: var(--color-accent);
         }
       `}</style>
-        </div>
-    );
+    </div>
+  );
 };
 
 export default Layout;
