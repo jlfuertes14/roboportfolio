@@ -471,8 +471,7 @@ const ProjectDetail = () => {
         .youtube-container {
           position: relative;
           width: 100%;
-          padding-bottom: 56.25%; /* 16:9 aspect ratio */
-          height: 0;
+          height: 200px; /* Match gallery image height */
           overflow: hidden;
           border-radius: 8px 8px 0 0;
           background: #000;
@@ -480,8 +479,9 @@ const ProjectDetail = () => {
 
         .youtube-container iframe {
           position: absolute;
-          top: 0;
-          left: 0;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
           width: 100%;
           height: 100%;
           border-radius: 8px 8px 0 0;
