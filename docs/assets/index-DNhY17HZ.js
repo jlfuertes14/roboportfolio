@@ -368,11 +368,12 @@ Please change the parent <Route path="${Y}"> to <Route path="${Y==="/"?"*":`${Y}
         }
 
         .caption {
-          padding: 0.5rem;
-          font-size: 0.8rem;
-          color: var(--color-text-secondary);
+          padding: 0.35rem 0.5rem;
+          font-size: 0.9rem;
+          color: rgba(255, 255, 255, 0.6);
           text-align: center;
           background: var(--color-bg-card);
+          font-weight: 300;
         }
 
         .sidebar-card {
