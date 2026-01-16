@@ -306,12 +306,12 @@ const ProjectDetail = () => {
         }
 
         .caption {
-          padding: 0.35rem 0.5rem;
-          font-size: 0.9rem;
-          color: rgba(255, 255, 255, 0.6);
+          padding: 0.5rem;
+          font-size: 0.75rem;  /* Smaller text */
+          color: var(--color-text-secondary);
           text-align: center;
           background: var(--color-bg-card);
-          font-weight: 300;
+          opacity: 0.8;  /* Slightly transparent */
         }
 
         .sidebar-card {
