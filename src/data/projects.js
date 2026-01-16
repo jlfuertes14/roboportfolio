@@ -199,12 +199,12 @@ export const projects = [
             {
                 title: 'Running the Visualizer',
                 description: 'Start the development server with `npm run dev`. Open the browser to see real-time sensor readings, PID outputs, and path data.',
-                image: `${BASE_URL}/assets/projects/bot-visualizer/dashboard.jpg`
+                image: null
             },
             {
                 title: 'Understanding the UI',
                 description: 'The dashboard shows: sensor distances (left/center/right), motor speeds, PID error graph, and a 2D representation of the bot\'s path.',
-                image: `${BASE_URL}/assets/projects/bot-visualizer/ui-breakdown.jpg`
+                image: null
             }
         ],
         gallery: [
