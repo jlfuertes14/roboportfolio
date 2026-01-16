@@ -94,7 +94,7 @@ const ProjectDetail = () => {
                           <span>{item.caption}</span>
                         </div>
                       ) : (
-                        <img src={item.url} alt={item.caption} />
+                        <img src={item.image} alt={item.caption} />
                       )}
                       <div className="caption">{item.caption}</div>
                     </div>
