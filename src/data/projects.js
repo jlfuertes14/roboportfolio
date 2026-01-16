@@ -47,9 +47,9 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' },
-            { type: 'image', url: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' },
-            { type: 'image', url: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' }
+            { image: '/assets/projects/maze-solver/front-view.jpg', caption: 'Front View' },
+            { image: '/assets/projects/maze-solver/top-view.jpg', caption: 'Top View' },
+            { image: '/assets/projects/maze-solver/in-action.jpg', caption: 'In Action' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/maze_solver_wall-follower_bot', size: 'GitHub' }
@@ -104,9 +104,9 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/self-balancing/sideview.jpg', caption: 'Side View' },
-            { type: 'image', url: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' },
-            { type: 'image', url: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' }
+            { image: '/assets/projects/self-balancing/sideview.jpg', caption: 'Side View' },
+            { image: '/assets/projects/self-balancing/balancing.jpg', caption: 'Balancing' },
+            { image: '/assets/projects/self-balancing/electronics.jpg', caption: 'Electronics' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/self_balancing_robot', size: 'GitHub' }
@@ -161,9 +161,9 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/companion-bot/cuteface.jpg', caption: 'Cute Face' },
-            { type: 'image', url: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' },
-            { type: 'image', url: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' }
+            { image: '/assets/projects/companion-bot/cuteface.jpg', caption: 'Cute Face' },
+            { image: '/assets/projects/companion-bot/expressions.jpg', caption: 'Expressions' },
+            { image: '/assets/projects/companion-bot/full-setup.jpg', caption: 'Full Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/companion_bot', size: 'GitHub' }
@@ -206,8 +206,8 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/bot-visualizer/pathvisualization.png', caption: 'Dashboard Overview' },
-            { type: 'image', url: '/assets/projects/bot-visualizer/pathoptimized.png', caption: 'Path Visualization' }
+            { image: '/assets/projects/bot-visualizer/pathvisualization.png', caption: 'Dashboard Overview' },
+            { image: '/assets/projects/bot-visualizer/pathoptimized.png', caption: 'Path Visualization' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/botvisualizer', size: 'GitHub' }
@@ -246,8 +246,8 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' },
-            { type: 'image', url: '/assets/projects/space-impact/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: '/assets/projects/space-impact/game-screen.jpg', caption: 'Game Screen' },
+            { image: '/assets/projects/space-impact/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/SpaceImpact', size: 'GitHub' }
@@ -291,8 +291,8 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' },
-            { type: 'image', url: '/assets/projects/retro-snake/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: '/assets/projects/retro-snake/game-screen.jpg', caption: 'Game Screen' },
+            { image: '/assets/projects/retro-snake/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/RetroSnake', size: 'GitHub' }
@@ -340,8 +340,8 @@ export const projects = [
             }
         ],
         gallery: [
-            { type: 'image', url: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' },
-            { type: 'image', url: '/assets/projects/favorite-boy/hardware-setup.jpg', caption: 'Hardware Setup' }
+            { image: '/assets/projects/favorite-boy/animation-demo.jpg', caption: 'Animation Demo' },
+            { image: '/assets/projects/favorite-boy/hardware-setup.jpg', caption: 'Hardware Setup' }
         ],
         downloads: [
             { name: 'Source Code', url: 'https://github.com/jlfuertes14/FavoriteBoyOLED', size: 'GitHub' }
