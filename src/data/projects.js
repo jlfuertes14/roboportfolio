@@ -174,7 +174,7 @@ export const projects = [
             { image: `${BASE_URL}/assets/projects/companion-bot/cuteface.jpg`, caption: 'Cute Face' },
             {
                 type: `youtube`,
-                videoId: `7tV34vv1M`,
+                videoId: `7L7tV34vv1M`,
                 caption: `Demo Video`
             }
 
